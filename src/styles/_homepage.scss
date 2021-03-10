@@ -1,0 +1,224 @@
+.Homepage {
+  .reset {
+    text-align: right;
+    width: 100%;
+    display: block;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin: 50px;
+  }
+  .SearchBar {
+    h2 {
+      font-size: 30px;
+      text-align: center;
+      margin: 20px;
+    }
+    form {
+      display: flex;
+    }
+
+    .control {
+      width: 100%;
+    }
+    input,
+    select {
+      width: 100%;
+      min-width: 99%;
+      height: 50px;
+      padding: 1.5rem 1rem;
+      background: #fff;
+      border: 1px solid #6e6d6e;
+      // appearance: none;
+      // -webkit-appearance: none;
+      // -moz-appearance: none;
+    }
+
+    button {
+      width: 100%;
+      display: block;
+      height: 50px;
+      background: $accent;
+      color: #fff;
+    }
+
+    .error {
+      input,
+      select {
+        border: 1px solid $error;
+        margin-bottom: 5px;
+      }
+    }
+
+    .error-text {
+      color: $error;
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .Directories {
+    width: 640px;
+    max-width: 100%;
+    margin: 40px auto;
+
+    h3 {
+      text-align: center;
+      font-size: 18px;
+      color: $accent;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .directories-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .item {
+        width: 20%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      img {
+        width: 32px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    }
+
+    .no-directories {
+      text-align: center;
+      font-size: 16px;
+      color: $primary;
+      font-weight: bold;
+      margin: 50px;
+    }
+  }
+
+  .SearchResult {
+    h3 {
+      text-align: center;
+      font-size: 16px;
+      color: $primary;
+      font-weight: bold;
+      margin: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 25% 55% 10% 10%;
+      font-size: 13px;
+      // row-gap: 15px;
+      color: #333;
+      > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+      }
+
+      > div:nth-child(8n + 5),
+      > div:nth-child(8n + 6),
+      > div:nth-child(8n + 7),
+      > div:nth-child(8n + 8) {
+        background-color: #cccccc20;
+      }
+    }
+
+    .header {
+      background: $accent;
+      color: #fff;
+      padding: 10px;
+    }
+
+    img {
+      width: 32px;
+      height: auto;
+    }
+
+    .red {
+      color: #d60600;
+    }
+  }
+
+  .Loading {
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+    .popup-container {
+      width: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 30px;
+      background: $accent;
+      color: #fff;
+      z-index: 3;
+      text-align: center;
+      overflow: hidden;
+    }
+    .loader {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .directories-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      animation: scroll 15s linear infinite;
+      .item {
+        width: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin: 0 10px;
+      }
+
+      img {
+        width: 32px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(110%);
+        }
+        50% {
+          transform: translateX(-110%);
+        }
+
+        100% {
+          transform: translateX(110%);
+        }
+      }
+    }
+  }
+}
